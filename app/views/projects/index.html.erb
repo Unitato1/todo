@@ -1,0 +1,9 @@
+<h1>Today todos</h1>
+<% @todos.each do |todo|%>
+<h1><%= todo.id.to_s + ". todo"%></h1>
+<div>
+  <div><%= todo.name %></div>
+  <div><%= todo.till || "not specified" %></div>
+  <div><%= todo.description %></div>
+</div>
+<% end%>
