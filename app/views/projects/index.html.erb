@@ -1,9 +1,10 @@
 <h1>Today todos</h1>
-<% @todos.each do |todo|%>
-<h1><%= todo.id.to_s + ". todo"%></h1>
-<div>
+<div class="container">
+  <% @todos.each do |todo|%>
+  <h1><%= todo.id.to_s + ". todo"%></h1>
   <div><%= todo.name %></div>
   <div><%= todo.till || "not specified" %></div>
   <div><%= todo.description %></div>
+  <% end %>
 </div>
-<% end%>
+<%= link_to "New project", new_project_url %>

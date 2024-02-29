@@ -1,0 +1,26 @@
+<h1>New project</h1>
+<% if @project.errors.any? %>
+  <% @project.errors.full_messages.each do |error|%>
+    <div>
+      <%= error %>
+    </div>
+  <% end %>
+<% end %>
+<div class="project-form">
+  <%= form_with(model: @project) do |f| %> 
+  <div>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name %> 
+  </div>
+  <div>
+    <%= f.label :description, "Description:" %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :till, "Finish:" %>
+    <%= f.date_field :till %>
+  </div>
+  <%= f.submit "Create new Project" %> 
+  <% end %>
+</div>
+<%= link_to "Back to projects", projects_url %>
