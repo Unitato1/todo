@@ -27,8 +27,11 @@ html {
   background-color: #102020;
   color: #fafafa;
 }
-.container {
-}
 input {
   border: solid #fafafa 1px;
+}
+.todo {
+  border: 2px #fafafa solid;
+  border-radius: 15%;
+  margin: 32px;
 }

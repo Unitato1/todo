@@ -13,8 +13,14 @@ class ProjectsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  def show
+    @project = Project.find(params[:id])
+  end
+  def edit
+    @project = Project.find(params[:id])
+  end
   private
   def project_parms
-    params.require(:project).permit(:name, :description, :till)
+    params.require(:project).permit(:name, :description, :till, :priority)
   end
 end

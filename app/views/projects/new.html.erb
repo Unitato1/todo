@@ -7,20 +7,24 @@
   <% end %>
 <% end %>
 <div class="project-form">
-  <%= form_with(model: @project) do |f| %> 
-  <div>
-    <%= f.label :name, "Name:" %>
-    <%= f.text_field :name %> 
-  </div>
-  <div>
-    <%= f.label :description, "Description:" %>
-    <%= f.text_field :description %>
-  </div>
-  <div>
-    <%= f.label :till, "Finish:" %>
-    <%= f.date_field :till %>
-  </div>
-  <%= f.submit "Create new Project" %> 
+  <%= form_with(model: @project) do |f| %>
+    <div>
+      <%= f.label :name, 'Name:' %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :description, 'Description:' %>
+      <%= f.text_field :description %>
+    </div>
+    <div>
+      <%= f.label :till, 'Finish:' %>
+      <%= f.date_field :till %>
+    </div>
+    <div>
+      <%= f.label :priority, 'Priority:' %>
+      <%= f.select :priority, %w[High Medium Low], selected: 'Medium' %>
+    </div>
+    <%= f.submit 'Create new Project' %>
   <% end %>
 </div>
-<%= link_to "Back to projects", projects_url %>
+<%= link_to 'Back to projects', projects_url %>

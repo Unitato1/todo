@@ -1,0 +1,7 @@
+<div class="todo">
+  <h1><%= @project.name %></h1>
+  <div>Till: <%= @project.till || 'not specified' %></div>
+  <div>Description: <%= @project.description %></div>
+  <div>Priority: <%= @project.priority %></div>
+</div>
+<%= link_to 'Back to projects', projects_url %>
